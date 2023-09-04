@@ -1,7 +1,6 @@
-import dev.coderpwh.client.Client
+import dev.coderpwh.client.MsgClient
 import dev.coderpwh.client.ClientFactory
 import dev.coderpwh.client.ClientType
-import dev.coderpwh.client.QingyunkeClient
 import kotlinx.coroutines.runBlocking
 import java.util.Scanner
 import kotlin.system.exitProcess
@@ -26,7 +25,7 @@ suspend fun main(args: Array<String>) {
     val msgResp = qingyunkeClient.sendMsg("你好啊，臭机器人")
     println(msgResp)
 }
-fun doChat(sc:Scanner,client: Client) {
+fun doChat(sc:Scanner,client: MsgClient) {
     showChatMenu()
     while (true) {
         val next = sc.next()

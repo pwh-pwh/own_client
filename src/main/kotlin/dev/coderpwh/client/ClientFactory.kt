@@ -6,7 +6,7 @@ package dev.coderpwh.client
  * @Description:
  */
 object ClientFactory {
-    fun getClient(ct:ClientType):Client {
+    fun getClient(ct:ClientType):MsgClient {
         return when(ct) {
             ClientType.OWNClient -> OwnClient.getDefault()
             ClientType.QingYunKeClient -> QingyunkeClient.getDefault()

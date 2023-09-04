@@ -1,7 +1,6 @@
 package dev.coderpwh.client
 
 import dev.coderpwh.pojo.OwnMsgReq
-import dev.coderpwh.pojo.MsgResp
 import dev.coderpwh.pojo.OwnMsgResp
 import io.ktor.client.*
 import io.ktor.client.call.*
@@ -17,12 +16,12 @@ import io.ktor.serialization.kotlinx.json.*
  * @Date: 2023/8/25 11:18
  * @Description:
  */
-class OwnClient(var appid: String, var userid: String? = null):Client {
+class OwnClient(var appid: String, var userid: String? = null):MsgClient {
     val client: HttpClient
 
     companion object {
         const val BaseUrl = "https://api.ownthink.com/bot"
-        fun getDefault():Client {
+        fun getDefault():MsgClient {
             return OwnClient("")
         }
     }

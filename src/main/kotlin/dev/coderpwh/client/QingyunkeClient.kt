@@ -15,11 +15,11 @@ import io.ktor.serialization.kotlinx.json.*
  * @Date: 2023/8/25 15:18
  * @Description:
  */
-class QingyunkeClient(var key: String = "free"):Client {
+class QingyunkeClient(var key: String = "free"):MsgClient {
     val client: HttpClient
     companion object {
         const val BaseUrl = "http://api.qingyunke.com/api.php?key=%s&appid=0&msg=%s"
-        fun getDefault():Client {
+        fun getDefault():MsgClient {
             return QingyunkeClient()
         }
     }
