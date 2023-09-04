@@ -32,6 +32,7 @@ fun doImg(sc: Scanner, imgClient: ImgClient) {
         if(next.startsWith("1:")) {
             runBlocking {
                 val message = imgClient.getImg(next)
+                Runtime.getRuntime().exec(arrayOf("explorer",message))
                 println("msg:$message")
             }
         } else {
