@@ -32,7 +32,7 @@ class BdFyClient(val appid: String, val secret: String) {
             }
         }
     }
-
+    //en zh
     suspend fun getTranslate(query:String,to:String): BdFyResp {
         val saltNum = getSaltNum()
         val result = client.post(BASE_URL.format(query,to,appid,saltNum.toString(),getSign(query, saltNum))) {
